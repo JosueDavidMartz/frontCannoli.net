@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Página principal";
+}
+
+<div class="fondo h-100">
+    <div class="card text-center bg-transparent border-0">
+        <h1 class="card-header bg-transparent border-0 text-danger">Pastelería Cannoli</h1>
+        <div class="card-body">
+            <h2 class="display-5 card-title">Pasteles, panes, postres y más</h2>
+            <p class="card-text lead">¿Quieres un pastel ya? Presiona el siguiente botón para inciar a ver nuestro catalogo.</p>
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <a asp-controller="Productos" class="btn btn-danger">Visualizar el catalogo de productos</a>
+            }
+            else
+            {
+                <a asp-controller="Auth" class="btn btn-danger">Comenzar</a>
+            }
+        </div>
+    </div>
+</div>
